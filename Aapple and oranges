@@ -1,0 +1,32 @@
+void countApplesAndOranges(int startHouse, int endHouse, 
+                           int appleTree, int orangeTree, 
+                           vector<int> applePos, vector<int> orangePos) {
+    
+    int fallingApples = 0 ;
+    int fallingOranges = 0 ;
+    
+    // Iterating over the apple positions  
+    for( int i=0 ; i<applePos.size() ; i++ ){
+        // if negative : then it is falling in the left side of apple tree 
+        if( applePos[i] < 0 ) continue ;
+        else {
+            // Pos = 2 + 5 = 7 (7 -- 11)
+            int tempAPos = applePos[i] + appleTree ;
+            if( tempAPos >= startHouse && tempAPos <= endHouse ) fallingApples++ ;
+        }
+    }
+    
+    // Iterating over the Orange positions  
+    for( int i=0 ; i<orangePos.size() ; i++ ){
+        // if positive : then it is falling in the right side of orange tree 
+        if( orangePos[i] > 0 ) continue ;
+        else {
+            // Pos = -6 + 15 = 11 (7 -- 11)
+            int tempPos = orangePos[i] + orangeTree ;
+            if( tempPos >= startHouse && tempPos <= endHouse ) fallingOranges++ ;
+        }
+    }
+    
+    //Print the answers 
+    cout << fallingApples << endl ;
+    cout << fallingOranges << endl ;
