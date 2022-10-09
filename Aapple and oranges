@@ -30,3 +30,4 @@ void countApplesAndOranges(int startHouse, int endHouse,
     //Print the answers 
     cout << fallingApples << endl ;
     cout << fallingOranges << endl ;
+}
